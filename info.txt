@@ -1,0 +1,1399 @@
+Comment Code Block Ctrl+K+C/Ctrl+K+U visual studio
+win+. emojei
+ctrl + shift + P
+ctrl + /  padaro comentais
+css class su tašku prasideda
+css id su #
+css prioritetai prosta tagas < class < id
+normalize vs reset (pvz:isvis h1 nuimtu visus nustatymus ir liktu kaip paragrafas gali buti reikia psaiaškinti)
+Important > Inline >id nesting > id > class nesting > class > tag nesting > tag
+box-sizing: border-box; kad neislysti su marginais ir kitais uz ribu bet jas reikia nurodyti. * {box-sizing: border-box;} visiem elementam html`e
+margin: 0 auto; išcentruoja pats blokas
+text-align: center; contenta centruoja
+margin colapse
+bla {
+    display: Block;
+}
+active turi eit po hover
+relative nuo saves
+absuliute nuo parent arba moniko
+position: fixed iskarto vienoje vietoje, stiky buna savo bet scrolinant uzsifixuoja kazkur
+jei nori daug transform reikia transform:matrix(); ir viskas propertys turi eiliskuma:
+[scalex][skewy][skewx][scaley][translatex][translatey]
+transform:matrix(2,1,1,2,70,-100)
+suletinimas pvz: transition:all 2s linear; 
+img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover; graziai istato taip kad uzimtu visa plota div`e ir ka nereikia nukerpa 
+    object-fit: contain; istato graziai visa img nesvarbu divo aukstis plotis kur lieka laisva ten balka
+  }
+
+-----------------------------------------------------------------------  
+css background greyout / Overlay
+-------
+background-image: linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url('https://bootstrapmade.com/demo/templates/OnePage/assets/img/hero-bg.jpg');
+-----------------------------------------------------------------------  
+background-clip: padding-box; KAD BACKGROUND NELYSTU PO BORDER
+-----------------------------------------------------------------------  
+-----------------------------------------------------------------------  
+!!!!!!!!!!!        JavaScript         !!!!!!!!!!!!!!!!!!!!!
+-----------------------------------------------------------------------
+
+jei nurodai <script src="script.js"></script> tai nebegalima rasyti scriptu viduje pvz: <script src="script.js">blablabla</script>
+
+<script defer src="script.js"></script> defer-loading after holl page loads
+console.log('labas \"rytas\"') jei reikaidaugiau "" reikia \priesh arba naudoti skirtingas " ' `
+
+pati scripta reiktu pradet "use strict"; paciam virsuje/pradzioje
+
+var nelabai naudojamas, naudojami let ir const 
+
+let reiksme galima perasineti const priskiriam reiksme ir ppc
+
+js reserved words: let class return junction ju negalima naudoti kaip pav. ir pan.
+const turi buti deklaruotas iskarto:  const bla = pcc;
+ const bla; bla=pcc; blogai.
+
+console.log("gimimo data: ", bla) ===> stringas + reiksme : gimimo data: 20200202.
+
+const nickName = "rikis";
+const digit = 14;
+console.log(`my nickname is ${nickName}`); veikia tik su backtikais `
+
+const dayTime = true ;
+const nightTime = false ; true//false nereikia deti i kabutes jie yra boolean
+
+array 
+let students = ["Augustinas","Aristidas","Darius"]
+turi index ir value tipo 0 ir Augustinas
+console.log(students[0]);
+
+object let person = {
+  firstName: "Aiste",
+  eyes: "gray",
+  hasKids: false,
+  hasCats: true,
+  catNames; ["Lexa","T`challa"],
+  age:16,
+}
+console.log(person);
+console.log(person.hasCats);
+
+x++ tas pats kas x=x+1
+x += 5 --//-- x = x + 5
+
+-------------------------------------------------------------
+---------------   comparison operatos  -----------------------
+---------------------------------------------------------------
+
+x==y patikrina ar ju reiksmes lygios atsakymas true arba false
+reiksmes ir tipai vienodi
+x===y 
+!=       nelygus
+!==
+<        mazesnis
+>        diddesnis
+?        
+truthy: true, non-zero number,"strings",objects,awways,functions.
+falsy: false, 0 , "" - tuscias stringas, undefined, null NaN.
+
+----------------------------------------------------
+!!!!!!!!!!!!!!   math  !!!!!!!!!!!!!!!!!!!!!!!!
+---------------------------------------------------
+
+be max
+ return Math.floor(
+    Math.random() * (max - min) + min)
+iskaitant max
+return Math.floor(
+    Math.random() * (max - min + 1) + min)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Math.max, Math.min is array ar kazkur kitur ras didziausia ar maziausia skaiciu;
+Math.pow(2,10) pirma skaiciu padaugina is saves kazkiek kartu 2*2*2*.... 2*2 desimt kartu
+
+anonimines funkcijos neturi pavadinimu
+
+---------------------------------------------------------------
+8 duomenu tipai:
+7 primityvus duomenu tipai:
+===============================================================
+1.boolean   true//false
+null        reiksme yra suteikta = niekas
+undefined   reiksme nesuteikta
+number      skaiciai
+bigInt      
+string      
+symbol
+2.Ir objektai
+
+number 1000.000.000 arba let milijardas = 1e9
+bigInt=
+const bilion1 = 1200000000;
+console.log(bilion1);
+const bilion2 = 1.2e9;
+console.log(bilion2);
+
+const microSec1 = 0.000001;
+console.log(microSec1);
+const microSec2 = 1e-6;
+console.log(microSec2);
+---------------------
+numberis.toFixed(2) suapvalins iki x.xx 5.56 is 5.5648946854
+grazina stringa
+----------------------------------------------------------------------------------------------------
+STRINGAI I NUMBERIUS
+GALIMA PARASYT + PRIS TA STRINGAI , bet stringas turi buti visi skaiciai
+Number irgi turi buti visi skaiciai 
+parseFloat - padaro skaiciu
+parseInt - viska panaikina po kablelio 
+parseFloat ir parseInt pavers i skaiciu iki pirmo simbolio 12f3 = 12
+
+---------------------------------------------------------------------------------------------------
+KEICIANT CSS PER JS VEIKIA KAIP INLINE TAI JS SPECIFISITY AUKSCIAU UZ CSS
+
+// CTA - call to action; //
+
+JEI FUNKCIJA RASOMA CONST BLA = function () {...........} BUTINA RASYTI PRIESH ISKVIETIMAS
+
+MASYVAI VISI ADD UNSHIFT SPLICE IR T.T. GALI PRIDET N ITEMU NE TIK 1
+JEI SPLICE(-2,0,"BLA","NLA")-2 REISKIAS NUO GALO SKAICIUOS
+
+OBJEKTAI TURI : SAVYBES IR METODUS
+
+let carObj = {
+  name = "audi",
+  year = 2021
+}
+-----------------------------------------------------
+DOM 
+BOM
+------------------------------------------------------------
+BUNA REPREZENTACINES SVETAINES(DAZNAI BE BACKENDO) IR WEB APLIKACIJOS(FACEBOOK IR PAN. KUR REIKIA REGINTIS, TEN AISKU REIKIA BACK ENDO)
+---------------------------------------------------------
+----------  CallBack functions - funkcijos kaip argumenta
+----------  priima kita funkcija
+---------------------------------------------------------
+
+
+
+------------------------------------------------------
+------------------------------------------------------
+              JS ARRAY METHODS                        
+------------------------------------------------------
+     forEach , map , filter , find , some , every
+------------------------------------------------------
+------------------------------------------------------
+      20210528:antras
+------------------------------------------------------
+property value galima paimti su [] arba . (objectas.property)
+ let numbers = [123, 456]
+ numbers.concat(21)
+
+
+for (item of array) {}
+
+------------------------------------------------------
+------------------------------------------------------
+              Basics of creating objects,
+      writing custom methods and calling them  
+        OOB object oriented programing
+------------------------------------------------------
+            20210602 pirmas , 20210604 pirmas
+------------------------------------------------------
+------------------------------------------------------
+//////////////////////////////////////////////////////
+------------------------------------------------------
+------------------------------------------------------
+              Sync, Async
+------------------------------------------------------
+              20210607 pirmas
+------------------------------------------------------
+------------------------------------------------------
+JS yra single thread skaito po 1 eilute
+Dazniausios problemos su krovimu buna kreipimaisi i serverius / API
+Ce gelbeja ASYNCHRONINIS  programavimas.
+Asinchroninis ir toliau skaito po viena eilute, bet kaika 
+atlieka tuo paciu metu.
+CALLSTACK - vyksta LIFO metodu.
+LIFO - last in first out.
+---------------
+asick gyvena apis is ten eina i message queue, message queue kas kazkiek laiko 
+ziuri ar call stackas tuscias jei tuscias imeta instrukcijas i call stack`a.
+Dar yra job queue jis turi prioriteta priesh message queue.
+---------------
+-------------------------------------------------------
+-------------------------------------------------------
+          Async porgramavimas, primises, callbacks
+-------------------------------------------------------
+          20210608 pirmas
+-------------------------------------------------------
+-------------------------------------------------------
+promises buna:musu sukurti ir esami(fetch)
+
+-------------------------------------------------------
+-------------------------------------------------------
+          Local storage and cookies
+-------------------------------------------------------
+          20210608 antras
+-------------------------------------------------------
+          local storage reikia išsitrinti
+          season storage uzdarius taba
+-------------------------------------------------------
+      JSON.stringify(kazka) ir JSON.parse(kazka)
+-------------------------------------------------------
+      Su cookies gali dirbti front endas ir back endas
+-------------------------------------------------------
+      PASIIMTI COOKIE VALUE PAGAL VARDA:
+function getCookie(name) {
+  const value = `${document.cookie}`;
+  const parts = value.split(`${name}=`);
+  return parts.pop();
+}
+stack over flow versija :
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+   ADD REMOVE COOKIE
+-----------------------------------------------------------
+const forma = document.forms[0];
+const nameInput = document.forms[0].elements[0];
+const btnNameToCookie = document.forms[0].elements[1];
+const btnDeleteNameFromCookie = document.querySelector("#deleteCookie");
+const nameP = document.querySelector("#nameP");
+// get cookie value
+function getCookie(name) {
+  const value = `${document.cookie}`;
+  const parts = value.split(`${name}=`);
+  return parts.pop();
+}
+// page on load 
+if (document.cookie !== "") {
+  forma.style.display = "none";
+  nameP.innerText = getCookie("username");
+  btnDeleteNameFromCookie.style.display = "block";
+} else {
+  null;
+}
+// add cookie
+btnNameToCookie.addEventListener("click", (event) => {
+  event.preventDefault();
+  let maxAge1 = "; expires=" + new Date().getFullYear + 10;
+  document.cookie = `username = ${nameInput.value}` + maxAge1;
+  nameP.innerText = getCookie("username");
+  forma.style.display = "none";
+  btnDeleteNameFromCookie.style.display = "block";
+});
+// delete cookie
+btnDeleteNameFromCookie.addEventListener("click", () => {
+  let maxAge = "; expires=" + new Date();
+  document.cookie = "username=" + getCookie("username") + maxAge;
+  nameP.innerText = "";
+  forma.style.display = "block";
+  btnDeleteNameFromCookie.style.display = "none";
+});
+console.log(document.cookie);
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+              REST API principles, Fetch GET
+-----------------------------------------------------------
+              20210609/Ernesto failai
+-----------------------------------------------------------
+-----------------------------------------------------------
+RESTful API - padeda komunikuoti Frontend`ui su backend`u.
+_________________________________________________________________________________________
+|        |  --> GET|POST|PUT|DELETE    |          |      -->  HTTP request      |        |             
+| client |                             |   API    |                             | server | 
+|        |  <--  JSON |XML | HTML      | REST API |      <--  HTTP response     |        |              
+----------------------------------------------------------------------------------------=
+--------------------------------------------------------
+ AJAX - leidzia komunikuoti Frontend`ui su backend`u be papildomu uzklausu (asinchroniskai)(neperkraunant puslapio).
+ JSON (JavaScript object notation) duomenu apsikeitimo formatas.
+ JSON stringify ir parses.
+------------------------------------------------------------
+------------------------------------------------------------
+GET YRA READ
+POST YRA CREAT
+PATCH YRA UPDATE
+DELETE YRA DESTROY
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+                API fetch POST
+------------------------------------------------------------
+  PAVIZDYS 20210614/petro_ernesto_variantas
+------------------------------------------------------------
+// variables
+const url = "https://olive-bead-glazer.glitch.me";
+const form = document.forms[0];
+const inputBrand = form.elements[0];
+const inputModel = form.elements[1];
+// function
+function sendFormToJson(e) {
+  e.preventDefault();
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify({
+      brand: inputBrand.value,
+      model: inputModel.value,
+    }),
+  });
+}
+// event
+form.addEventListener("submit", sendFormToJson);
+console.log(inputBrand, inputModel);
+
+------------------------------------------------------------
+POST backende : 2 budai kaip gauti value ish objekto, per key
+------------------------------------------------------------
+app.get("/cars/:brand", (req, res) => {
+  res.send(cars[req.params.brand]);
+  // let id = Object.keys(cars).find((item) => item === req.params.brand);
+  // console.log(id);
+  // res.send(cars[id]);
+});
+------------------------------------------------------------
+  addEventListener
+------------------------------------------------------------
+  DOMContentLoaded ir Load (load tai kai ir css uzkrauna)
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+
+
+
+
+2 === 2   true
+2 == "2"  false true
+2 !== 2   false
+5 < 5     false
+5 >= 4    true
+true !== false    true
+9 - 5 === 4       true
+5 * 5 !== "25"    true
+true && true      true
+2 === 5 && true   false
+6 * 6 === 36 && 15 - 9 == "6"           false   true
+false || false                          false
+10 === 10 || 5 == 2                     true
+2 * 2 / 2 == "1" || 5 * 5 === 25        true
+14 * 2 !== "28" || "Jonas" == "Jonas"   true
+10 && 15 > 10                           true
+"Petras" && 0                           false   0
+("Petras" || "Jonas") && (22 * 5 || 15 - 1 === 13)    true    110
+"jonas" === "Jonas"                                   false
+"Petras" + 5 === "Petras" + "5"                       false   true
+"Jonas" + 5 + 5 === "Jonas10"                         false
+5 + 10 + "Antanas" === "15Antanas"                    false   true
+2 + 1 + "Jonas" + 3 + 2 === "3Jonas5"                 false   
+10 % 1 === 1                                          false
+5 * "5" === 25                                        false   true
+
+
+website :
+
+1 website :
+- front end :HTML CSS JS
+- backend : optional
+2 web aplikacijos : 
+- front end :HTML CSS JS
+- backend :
+- programing languages : PHP , Node.js , Java etc.
+- Databases :MySQL , MongoDB , etc.
+--------------------------------------------------
+ WEB APPLICATION DEVELOPMENT 
+ - Clievnt side rendering (CSR)
+ - - Frontend : HTML, CSS, JS (istikruju dazniausisi su framworku : React.js ar VUE.js ar Angular/Angular.js)
+ - Server side rendering (SSR)
+ - - Backend:
+ - - - Frontend(kaip sudedamoji backendo dalis):HTML CSS JS (Temlplate engine(EJS, TWIG, PUG) or React.js (Next.js) or Vue.js (Nuxt.js))
+
+===========================================================
+===========================================================
+                Lenteles gamyba su js
+===========================================================
+ function makeTable(wereToAppend) {
+  //creat append table
+  const table = document.createElement("table");
+  wereToAppend.append(table);
+  //headeriai
+  const tHead = table.createTHead();
+  const row = tHead.insertRow(0);
+  const id = row.insertCell(0);
+  const foto = row.insertCell(1);
+  const fName = row.insertCell(2);
+  const lName = row.insertCell(3);
+  const city = row.insertCell(4);
+  const favColor = row.insertCell(5);
+  id.textContent = "Id";
+  foto.textContent = "Foto";
+  fName.textContent = "First Name";
+  lName.textContent = "Last Name";
+  city.textContent = "City";
+  favColor.textContent = "Favorite color";
+}
+===========================================================
+getElementsByTagName/classname ir t.t. atiduoda html kolekcija
+todel reikia ja Array.from(ta html kolekcija) kad galima butu taikyti METODUS,
+bet nodeListas nemato naujai pridetu (su time outu ar seip su js veliau idetu)
+o HTML kolekcija yra gyva ji matys jei brouzerio:console.log`e bandysim patikrinti tuos listus
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+        validacijos inputu
+===========================================================
+if (
+    !nameInput.value ||
+    !surnameInput.value ||
+    !emailInput.value ||
+    !birthdateInput.value
+  ) {
+    let errMsg = [];
+    !nameInput.value ? errMsg.push("Vardas") : null;
+    !surnameInput.value ? errMsg.push("Pavarde") : null;
+    !emailInput.value ? errMsg.push("El.pastas") : null;
+    !birthdateInput.value ? errMsg.push("Gimimo data") : null;
+    return (errorMessage.innerText = `Uzpildykite: ${errMsg}.`);
+  } else {
+    errorMessage.innerText = "";
+  }
+===========================================================
+===========================================================
+===========================================================
+GAUTI INFO IR API SUKURTI CARDUS IS API GAUTO ARRAY
+PRIDETI MYGTUKA KURIS DELETE ITEMA IS API
+===========================================================
+PASIIMIMAS TARGETO SU DATASET
+===========================================================
+VISI FAILAI 20210616/petro
+===========================================================
+const API_URL = "https://golden-whispering-show.glitch.me/";
+// Variables
+const cards = document.querySelector("#cards");
+
+// Functions
+function deleteProduct(e) {
+  console.log(e.target.dataset.id);
+  return fetch(API_URL + e.target.dataset.id, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+}
+// Events
+document.addEventListener("DOMContentLoaded", () => {
+  return fetch(API_URL)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      data.forEach((element) => {
+        const div = document.createElement("div");
+        div.setAttribute("class", "card");
+
+        const img = document.createElement("img");
+        img.setAttribute("src", `${element.image}`);
+        img.setAttribute("class", "productImg");
+
+        const title = document.createElement("h4");
+        title.textContent = element.title;
+
+        const price = document.createElement("span");
+        price.textContent = element.price;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.addEventListener("click", deleteProduct);
+        deleteBtn.textContent = "Ištrinti";
+        deleteBtn.dataset.id = element.id;
+
+        div.append(img, title, price, deleteBtn);
+
+        cards.appendChild(div);
+      });
+    });
+});
+
+===========================================================
+===========================================================
+  REST pluginas      20210617/petro/test.http
+===========================================================
+===========================================================
+
+===========================================================
+===========================================================
+        ES_MODULES 
+        20210621/ES_MODULES
+===========================================================
+commonJS, AMD (Asynchronous Module Definition) , ES2015 (ES6)
+===========================================================
+===========================================================
+
+===========================================================
+===========================================================
+CLASS
+===========================================================
+ES 5:
+function Movie(name) {
+  this.name = name;
+}
+
+Movie.prototype.start = function () {
+  console.log(`${this.name} started`)
+}
+
+let harryPotter = new Movie("Harry Potter")
+===========================================================
+ES 6:
+class Car{
+  constructor(name) {
+    this.name=name;
+  }
+  start() {
+    console.log(`${this.name} started`)
+  }
+}
+
+let audi = new Car("Audi")
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+
+--WEB APPLICATION--
+frontend: HTML CSS JS (dar gali buti:react.js, angular, vue.js)
+
+backend: programing language(PHP, (Node nera programavimo kalba,runtime kurio pagalba js runinam backende), Java,C++,C#,C...) ir database(MySQL,PostgreSQL,MongoDB..)
+
+===========================================================
+
+client-side rendering:
+frontend
+   |  /\
+   |   | restAPI
+  \/   |
+backend
+---------------------
+server-side rendering:
+Backend:
+back end logic
+front end logic
+===========================================================
+            NODE.JS
+===========================================================
+          20210628
+===========================================================
+ npm ir yarn daro ta pati
+===========================================================
+npm instal pavadinimas            dependencies
+npm instal pavadinimas --save-dev dev dependencies
+===========================================================
+{
+  "name": "1_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./" <------ --public-url ./
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
+
+===========================================================
+===========================================================
+webpack ir parcel
+yra bundlai vanila js perdaro visus let const ES6 funkcijas ir pan
+===========================================================
+PARCEL 20210629
+===========================================================
+===========================================================
+===========================================================
+      npm install express
+===========================================================
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("OK");
+});
+app.listen(8080, () => console.log("The server is running on port 8080"));
+=============================================================
+PVZ KAIP FRON IR BACK END MUSU SUKURTI BENDRAUJA
+20210629_1_parcel/CAO/antra_uzduotis
+=============================================================
+=============================================================
+        EXPRESS - node.js frameworkas
+=============================================================
+    20210630 
+=============================================================
+Express orientuotas i SSR(server side rendering)
+=============================================================
+=============================================================
+=============================================================
+=============================================================
+CRUD(create read update delete)
+
+
+============================================================
+  WEB APPLICATIONS:
+    Client side rendering (CSR)
+      Frontend ( HTML, CSS, JS || REACT , AGULAR, VUE.js)
+      Backend (Node.js (express.js) + MongoDB || other stack)
+        Frontend and Backend communication: using REST API
+    Server side rendering (SSR)
+      Backend (Node.js (express.js) + MongoDB || other stack)
+        Frontend ( HTML, CSS, JS || REACT , AGULAR, VUE.js || Temlplate endine)
+          Frontend and Backend communication: backend generates frontend by sending data || REST API (tas arba tas arba kartu)
+============================================================
+============================================================
+============================================================
+                DUOMENU BAZES
+============================================================
+        20210630/pirma_express/CSR
+============================================================
+ NoSQL(dokumentas su objektais) vs SQL(Lenteles su fixuotais columns ir rows)
+SQL(server query language)
+============================================================
+SQL DB arba  relational DB
+============================================================
+SELECT population FROM world
+WHERE name = 'Germany'
+-------------------------
+SELECT name, population FROM world
+  WHERE name IN ('Russia', 'Sweden', 'Norway', 'Denmark');
+------------------------
+SELECT name, area FROM world
+  WHERE area BETWEEN 200000 AND 250000
+------------------------
+SELECT name FROM world
+WHERE name LIKE '%United%'
+------------------------
+SELECT name, population, area
+FROM world
+WHERE population>250000000 
+OR area>3000000
+------------------------
+SELECT name, population, area
+FROM world
+WHERE (population>250000000 
+OR area>3000000)
+AND NOT(population>250000000 and area>3000000)
+------------------------
+SELECT name , ROUND(gdp/population,-3)
+FROM world
+WHERE gdp>1000000000000
+--------------------------------------
+SELECT name, capital
+FROM world
+WHERE LEFT(name,1)= LEFT(capital,1) AND capital<>name
+-----------------------------
+SELECT name
+   FROM world
+WHERE name LIKE '%a%' and  name LIKE '%e%' and  name LIKE '%i%' and  name LIKE '%o%' and  name LIKE '%u%'
+  AND name NOT LIKE 
+  ----------------------
+SELECT * FROM nobel
+ WHERE subject = 'Peace'
+  AND winner IN ('Theodore Roosevelt',
+                  'Woodrow Wilson',
+                  'Jimmy Carter',
+                  'Barack Obama')
+------------------------
+surusiuoja pagal jei Phys ar Chem i gala , tada padal subject tada winner(varda)
+SELECT winner, subject, subject IN ('Physics','Chemistry')
+  FROM nobel
+ WHERE yr=1984
+ ORDER BY 
+ CASE WHEN subject IN ('Physics','Chemistry') THEN 1 ELSE 0 END,
+subject,winner
+----------------------
+SELECT  DISTINCT continent // DISTINCT paima tik 1 ir nekartoja jei ras dar
+FROM world
+----------
+SELECT SUM(population)
+FROM world
+WHERE name IN ('Estonia','Latvia','Lithuania') // kokiose salyse skaicuoti population
+--------
+SELECT continent, COUNT(name)
+FROM world
+WHERE population>= 10000000
+GROUP BY continent // sugrupuoja visus turincius ta pati continent
+--------------------
+SELECT continent
+FROM world
+GROUP BY continent
+HAVING SUM(population)>=100000000
+--------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------
+  let user = JSON.parse(localStorage.getItem("user"));
+
+  if (user) {
+    a2.href = location.href.includes("pages")
+      ? "./my-account.html"
+      : "./pages/my-account.html";
+    a2.textContent = "My Account";
+  } else {
+    a2.href = location.href.includes("pages")
+      ? "./login.html"
+      : "./pages/login.html";
+    a2.textContent = "Login/Register";
+  }
+------------------------------------------------------------------------
+a1.href = location.href.includes("pages") ? "../index.html" : "index.html";
+===========================================================
+===========================================================
+          command prompt
+===========================================================
+cd ls mkdir cd..
+===========================================================
+===========================================================
+===========================================================
+  WEB APPLICATIONS:
+    Client side rendering (CSR)
+      Frontend ( HTML, CSS, JS || REACT , AGULAR, VUE.js)
+      Backend (Node.js (express.js) + MongoDB || other stack)
+        Frontend and Backend communication: using REST API
+    Server side rendering (SSR)
+      Backend (Node.js (express.js) + MongoDB || other stack)
+        Frontend ( HTML, CSS, JS || REACT , AGULAR, VUE.js || Temlplate endine)
+          Frontend and Backend communication: backend generates frontend by sending data (MVC)|| REST API (tas arba tas arba kartu)
+
+MVC - model view controller design, classic or almost a standard way of designing web apps these days
+
+SPA - single page application: the page loads once, HTML is send to the client and JavaScript kicks in for all future interaction and update of the UI.
+
+MPA - multi page application: a traditional app where each interaction gets a request-wait-response-wait treatment and the page gets fully reloaded for every click.
+
+SSR - server side rendering: server renders the page and returns fully compiled HTML
+
+CSR - client side rendering: server returns (almost) empty HTML and JavaScript renders the page on the client's side
+
+
+
+
+
+
+
+
+
+/* ------------------------------ TASK 7 -----------------------------------
+Turimas "audi" objektas.
+
+Parašykite funkciją showObjectKeys, kuri kaip argumentą priims objectą 
+ir grąžins visus jo "key" masyve.
+-------------------------------------------------------------------------- */
+
+// Variables
+const audi = {
+  make: 'audi',
+  model: 'A6',
+  year: 2005,
+  color: 'white',
+};
+
+
+// Functions
+function showObjectKeys(obj) {
+  let objectKeysArrey = []
+  Object.entries(obj).map(item => objectKeysArrey.push(item[1]))
+  return objectKeysArrey
+}
+// tikriausiai ne pats optimaliausias budas, bet veikia :D
+
+=====================================================================================
+
+function Calculator () {};
+
+function sum(numb1, numb2) {
+  return numb1 + numb2;
+}
+
+function subtraction(numb1, numb2) {
+  return numb1 - numb2;
+}
+
+function multiplication(numb1, numb2) {
+  return numb1 + numb2;
+}
+
+function division(numb1, numb2) {
+  return numb1 + numb2;
+}
+
+
+NUMBER VALIDATION
+typeof "kazkas" !== "number"
+
+
+
+
+
+
+
+
+<li
+            class="
+              list-group-item
+              d-flex
+              align-items-center
+              justify-content-sm-around
+            "
+          >
+            <h3>name<br />surname</h3>
+            <h3>email@bal.bla</h3>
+            <h3>+897654321</h3>
+            <h3>black<br />1000x1200x500mm<br />woodtype</h3>
+            <h3 class="text-danger">In progress..</h3>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                DONE
+              </label>
+            </div>
+          </li>
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+          MySQL
+                      MySQL
+  MySQL
+// -- CREAT TABLE
+app.post("/api/admin/createtable", (req, res) => {
+  const tableName = req.body.tableName;
+
+  connection.query(
+    `CREATE TABLE ${tableName}(ID int AUTO_INCREMENT, make VARCHAR(255), model VARCHAR(255), PRIMARY KEY (ID))`,
+    () => {
+      console.log(`${tableName} table created...`);
+    }
+  );
+});
+// get single car
+app.get("/api/cars/:id", (req, res) => {
+  let carId = req.params.id;
+  console.log(carId);
+  let query = connection.query(
+    `SELECT * FROM cars WHERE ID = ${carId}`,
+    (err, data) => {
+      res.json(data);
+    }
+  );
+});
+// -- add car
+app.post("/api/cars", (req, res) => {
+  console.log(req.body);
+  let car = req.body;
+  let query = connection.query("INSERT INTO cars SET ?", car, () => {
+    console.log("car added");
+    res.send("car added");
+  });
+});
+// delete single car based on id
+app.delete("/api/cars/:id", (req, res) => {
+  let carToDeleteId = req.params.id;
+  console.log(carToDeleteId);
+  let query = connection.query(
+    `DELETE FROM cars WHERE ID = ${carToDeleteId}`,
+    (err, data) => {
+      res.json({ deleteStatus: "success" });
+    }
+  );
+});
+// -- update single car based on id
+app.put("/api/cars/:id", (req, res) => {
+  const { ID, make, model } = req.body;
+  let newData;
+  if (make && model) {
+    newData = `make = "${make}", model = "${model}"`;
+  } else if (make) {
+    newData = `make = "${make}"`;
+  } else if (model) {
+    newData = `model = "${model}"`;
+  }
+  let query = connection.query(
+    `UPDATE cars SET ${newData} WHERE ID = ${ID}`,
+    (err, data) => {
+      if (err) res.json(err);
+      res.json(data);
+    }
+  );
+});
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+        CORS
+app.use(cors({
+  origin: "http://127.0.0.1:5500",
+  methods: ["GET","POST"]                 <-- praleis tik situos metodus
+  credentials: true,                      <-- kazkas su kukiais
+}))
+
+
+=============================================================
+=============================================================
+              react
+=============================================================
+create-react-app, gadsbis, next
+=============================================================
+    20210816
+=============================================================
+npx create-react-app my_app
+cd my_app
+npm start
+
+=============================================================
+trumpinys vs code, rce, rconst // functionComponent trumpiniai rafce, useSta
+=============================================================
+App.js rasoma jsx sintakse
+ja interpretuoja babelis
+=============================================================
+js failai mazaja, componentai didziaja
+=============================================================
+aplikacijos paremtos komponentais. Komponentai buna klasiniai(senesnis budas + sunkesnis),
+funkcinis(naujasnis)
+=============================================================
+seniau klasiniai buvo naudojami ten kur reikia logikos
+o funkciniai atvaizduo, nuo 2019 funkciniai viskam
+=============================================================
+komponentas daugkartinio panaudojimo blokas
+=============================================================
+class Component:
+class Wellcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>
+  }
+}
+=============================================================
+function Component:
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>
+}
+=============================================================
+naudojama jsx, tai yea js plėtinys
+=============================================================
+componentDidMount() : uzkrovus html`a
+=============================================================
+State management in react
+
+State types:
+- Global state (can be accesed in any (not always every) component or page/screen)
+- Local state (can be accesed in component that describes it)
+
+State management tools:
+-useState (in functional components)
+- state/setState (in class componnents)
+- useReducer  (in functional componnents)
+- Redux (third party library)
+=============================================================
+Enviroment for REACT.js application
+- Create React App (CRA) - Single page application
+- Gatsby.js | Multi page application | Static site generator
+- Next.js | Multi page application | Server side rendering 
+------
+Main diferences
+                  SPEED DYNAMIC SECURITY SEO (search engine optimization)
+- CRA                +     +        +     -   
+- Gatsby.js          +     **       +     +      
+- Next.js            *     +        ***   +       
+
+*next leciausias nes labai priklauso nuo serverio(jis SSR)
+** kadangi jie statiniai nera dinaminiai :)
+*** kadangi SSR kadangi SSR daugiau problemu..                           
+=============================================================
+npx gatsby new my-gatsby-project https://github.com/gatsbyjs/gatsby-starter-hello-world
+=============================================================
+Next.js
+CSR:
+- frontend (next.js still works as SSR)
+- backend
+SSR
+- backend
+-- frontend
+=============================================================
+react(vadina library kiti frameworku)
+=============================================================
+React.js application Enviroment
+- Create react app | single page application (npm run build ir serveryje build direktorija talpinam)
+- Next.js          | Multi page application - server side rendering / (+SSG static site generation) (npm run build bet serveryje viska talpinam)
+- Gatsby.js        | Multi page application - Static site generation (+ Client side rendering)
+- CUSTOM           | Single/Multi page application - Client/Server side rendering
+=============================================================
+React.js application routing
+- Create React App - using third party library "React router": https://reactrouter.com (npm i react-router-dom)
+- Next.js using inner routing system (files inside "pages" folder are app pages)
+- Gatsby.js  using inner routing system (files incide "pages" folder are app pages)
+=============================================================
+=============================================================
+dar yra create-vite-app
+------------
+npm init @vitejs/app dirPavadinimas 
+instaliavimo metu pasirenki pvz: react poto typescript
+ir tada npm i nes lyg ir pats neyraso dependencys
+npm run dev (ne start)
+=============================================================
+=============================================================
+React.js state management
+- state                       | Class components
+- useState React.js hook      | (labiau) local state management
+- useReducer React.js hook    | local/global state management
+- Redux third party library   | global state management
+
+--- For global state we need, Content API (+useContext hook in functional components)
+---- Sending global state: we need Context.Provider
+---- Receiving global state: we need Context.Consumer (class components) or useContext hook (functional components)
+=============================================================
+React.js components lifecycle
+- Mounting (when component is created):
+-- Class component calls: constructor -> render -> componentDidMount
+-- Functional component call: returt -> useEffect (if useEffect need to run only once needs to have empty array brackets useEffect(()=>{}, [])) 
+- Updating (when component gets new props or state change)
+-- Class component calls: render -> componentDidUpdate
+-- Functional component call: return -> useEffect (useEffect will be called only if no dependency array at all or state in dependency array changed)
+- Unmounting (when component is removed from UI)
+-- Class component calls: componentWillUnmount
+-- Functional component calls: useEffect (will be called useEffect return function useEffect(()=>{
+  rerurn ()=>{
+    Unmounting logic;
+  }
+}))
+=============================================================
+useEfect panaudojimas pagal aplinkas:
+- CRA (create react app)
+-- state management with useState, useReducer
+--- useEffect could be use`d for:
+---- 1. get data from API.
+---- 2. action in component when it`s created | updated | removed
+-- state management with Redux
+--- useEffect could be use`d for:
+---- 1. get data from API (could be done without useEffect).
+---- 2. action in component when it`s created | updated | removed
+- Next.js
+-- useEffect could be use`d for:
+action in component when it`s created | updated | removed
+- Gatsby.js
+-- useEffect could be use`d for:
+action in component when it`s created | updated | removed
+- Custom
+-- useEffect could be use`d for:
+--- 1. get data from API (could be done without useEffect).
+--- 2. action in component when it`s created | updated | removed
+=============================================================
+=============================================================
+=============================================================
+setState(keitimas su funkcija)
+=============================================================
+<CounterButton value={[4, 5]} />
+=============================================================
+const CounterButton = ({ value }) => {
+  const [count, setCount] = useState(value);
+
+  const clickHandler = () => setCount((prev) => prev.map((num) => num + 1));
+
+  return <button onClick={clickHandler}>Count: {count.join(' | ')}</button>;
+};
+=============================================================
+=============================================================
+        React.js props       (npm i prop-types)
+=============================================================
+        React.js (styled components)       (npm i styled-components)
+        pvz: 
+        import styled from 'styled-components';
+
+        export const bla = styled.div`
+          position: fixed;
+          background-color: rgba(190, 231, 214, 0.4);
+        `;
+=============================================================
+        
+=====================================================================
+=====================================================================
+        React.js portals (pavizdys: 20211004/1_frontend_recap) modal
+=====================================================================
+import ReactDOM from 'react-dom';
+const FullUserInfoModal = () => {
+  // Hooks
+  // - Context
+  const { showModal, fullUserInfo, setShowModal } = useContext(ModalContext);
+
+  // - side effect
+  useEffect(() => {
+    document.addEventListener(
+      'keydown',
+      (e) => {
+        if (e.key === 'Escape') {
+          setShowModal(false);
+        }
+      },
+      []
+    );
+  });
+
+  // custom functions
+  const closeOnOverlay = (e) => {
+    if (e.target.dataset.id === 'ModalWrapper') {
+      setShowModal(false);
+    }
+    return;
+  };
+  return ReactDOM.createPortal(
+    <Overlay onClick={(e) => closeOnOverlay(e)} data-id='ModalWrapper'>
+      <FullUserInfoWrap>
+        <ul>
+          <li>FullName: {fullUserInfo.name}</li>
+        </ul>
+      </FullUserInfoWrap>
+    </Overlay>,
+    document.getElementById('modal')
+  );
+};
+=============================================================
+=============================================================
+escape key keyboard clikas
+// - side effect
+  useEffect(() => {
+    document.addEventListener(
+      'keydown',
+      (e) => {
+        if (e.key === 'Escape') {
+          setShowLoginForm(false);
+        }
+      },
+      []
+    );
+  });
+=============================================================
+mouseClikas sale popup
+const closeOnOverlay = (e) => {
+    if (e.target.dataset.id === 'ModalWrapper') onClose();
+    return;
+  };
+
+<ModalWrapper onClick={(e) => closeOnOverlay(e)} data-id='ModalWrapper'>
+
+=============================================================
+=============================================================
+      React.js forward ref 
+============== tevinis elementas:
+import React, { useRef, useEffect, useState, forwardRef } from 'react';
+import Input from './Input';
+
+const Form = () => {
+  // Hooks
+  // - side effects
+  useEffect(() => {
+    nameInputRef.current.focus();
+    surnameInputRef.current.placeholder = 'Your surname';
+  }, []);
+
+  const nameInputRef = useRef();
+  const surnameInputRef = useRef();
+
+  return (
+    <form>
+      <div>
+        <label htmlFor='Name'>Name</label>
+        <Input ref={nameInputRef} />
+      </div>
+      <div>
+        <label htmlFor='Surname'>Surname</label>
+        <Input ref={surnameInputRef} />
+      </div>
+    </form>
+  );
+};
+
+export default Form;
+
+============ vaikinis elementas:
+import React, { forwardRef } from 'react';
+
+const Input = (props, ref) => {
+  return <input type='text' ref={ref} />;
+};
+
+export default forwardRef(Input);
+
+=============================================================
+=============================================================
+=============================================================
+react-query useQuery + useTodos()
+=============================================================
+import {useQuery} from "react-query"
+
+const fetchTodos = () => axios.get("https://example.com/todos").then(res=>res.data)
+
+export function useTodos() {
+  const {data:todos,isLoading,error}=useQuery("todos",fetchTodos)
+
+  return {todos,isLoading,error}
+}
+=============================================================
+=============================================================
+react-query useMutation + useToggleTodo
+=============================================================
+import {useMutation} from "react-query"
+ const getToggleTodoById = todoId => axios.get(`https://example.com/todos/${todoId}/toggle`).then(res=>res.data)
+
+  export function useToggleTodo() {
+    return useMutation(getToggleTodoById {
+      refetchQueries: ["todos"]
+    })
+  }
+=============================================================.
+=============================================================
+useLayoutEffect veikia pries renderi useEffect po.
+=============================================================
+=============================================================
+ redux Redux
+=============================================================
+npm i redux react-redux
+=============================================================
+npm i redux-thunk (kazkas.. reikes paziuret)
+=============================================================
+=============================================================
+STATE MANAGEMENT TECHNIQUES IN REDUX:
+1.TECHNIQUE NR.1:
+- STORES STATE
+- MANIPULATES STATE
+2.TECHNIQUE NR.2:
+-STURES STATE
+-MANIPULATES STATE
+-MAKES API REQUESTS (and add them to state)
+=============================================================
+=============================================================
+autentifikacija username:aliosa pass:stalas123
+                duomenu bazeja pass:bus gal 50 simboliu kurie
+                reiks stalas123
+=============================================================
+=============================================================
+=============================================================
+        AUTH Auth auth
+=============================================================
+=============================================================
+=============================================================
+Authentication is the process of determining whether someone or something is, in fact, who or what it says it is
+
+Authorization is the function of specifying access rights/privileges to resources, which is related to general information security and computer security, and to access control in particular. 
+=============================================================
+npm i bcryptjs uzhasina paswordus backende tada galima siusti i DB
+ir tikrina kai loginasi useris gauta is DB su frontend atsiustu
+=============================================================
+npm i jsonwebtoken
+=============================================================
+=============================================================
+=============================================================
+=============================================================
+=============================================================
+=============================================================
+redux-devtools-extension
+=============================================================
+naujasnis redux variantas
+-----------
+npm i @reduxjs/toolkit react-redux
+=============================================================
+=============================================================
+CUSTOM REACT :
+=============================================================
+npm init
+npm i react
+npm i react-dom
+npm i -D webpack webpack-cli webpack-dev-server webpack-merge html-webpack-plugin
+npm i -D babel-loader css-loader style-loader
+npm i -D @babel/core @babel/preset-env @babel/preset-react
+=============================================================
+dokumentacijos geriausia ieskoti per npm puslapi apie visus webpakus ir pan, jei placiau reikia tai aisku paciu puslapiuose
+=============================================================
+=============================================================
+TYPE SCRIPT
+=============================================================
+tsc --init
+tsc index.ts
+tsc --watch tsc -w          xz kazkada 1 kazkada kita
+=============================================================
+declaration file 
+npm i preset-typescript typescript
+=============================================================
+=============================================================
+useRef()
+const titleRef = useRef<HTMLHeadingElement>(null!);
+const isMounted = useRef<boolean>(false);
+=============================================================
+=============================================================
+=============================================================
+node enter
+require('crypto').randomBytes(64).toString('hex')
+geras jwt secretam generuoti
+==========================================================
+==========================================================
+backend (npm i multer) for file upload
+==========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
